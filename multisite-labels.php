@@ -13,33 +13,41 @@ if( ! is_multisite() )
 
 class Multisite_Labels {
 	function __construct() {
-		add_action( 'admin_bar_menu', array( $this, 'admin_bar' ) );
+		add_action( 'get_blogs_of_user', array( $this, 'change' ) );
 	}
 
 	/**
-	 * Show the right label in the admin bar
+	 * Change the label of the blog
 	 */
-	function admin_bar( $menu ) {
-		if( 0 >= count( $menu->user->blogs ) )
-			return;
+	function change( $blogs ) {
+		if( 0 == count( $blogs ) )
+			return $blogs;
 
-		foreach( $menu->user->blogs as &$blog ) {
+		foreach( $blogs as &$blog ) {
 			$hash = md5( time() );
 
 			if( $hash === get_blog_option( $blog->userblog_id, 'admin_label', $hash ) ) {
+
 				/**
 				 * Allow superadmins to setup an admin label
 				 */
+				
 				switch_to_blog( $blog->userblog_id );
 				update_option( 'admin_label', '' );
 				restore_current_blog();
+
 			} else if( $admin_label = get_blog_option( $blog->userblog_id, 'admin_label' ) ) {
+
 				/**
 				 * Set the admin label
 				 */
+				
 				$blog->blogname = $admin_label;
+				
 			}
 		}
+
+		return $blogs;
 	}
 
 } new Multisite_Labels;	
