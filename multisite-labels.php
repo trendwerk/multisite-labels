@@ -1,11 +1,14 @@
 <?php
 /**
- * Plugin Name:     Multisite labels
- * Plugin URI:      https://github.com/trendwerk/multisite-labels/
- * Description:     Assign labels to WP Multisite websites. Useful for keeping them apart in multilingual environments.
- * Version:         1.0
- * Author:          Trendwerk
- * Author URI:      https://github.com/trendwerk/
+ * Plugin Name: Multisite labels
+ * Description: Assign labels to WP Multisite websites. Useful for keeping them apart in multilingual environments.
+ * 
+ * Plugin URI: https://github.com/trendwerk/multisite-labels/
+ * 
+ * Author: Trendwerk
+ * Author URI: https://github.com/trendwerk
+ * 
+ * Version: 1.0.0
  */
 
 if( ! is_multisite() )
