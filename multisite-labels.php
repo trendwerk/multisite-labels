@@ -2,13 +2,13 @@
 /**
  * Plugin Name: Multisite labels
  * Description: Assign labels to WP Multisite websites. Useful for keeping them apart in multilingual environments.
- * 
+ *
  * Plugin URI: https://github.com/trendwerk/multisite-labels/
- * 
+ *
  * Author: Trendwerk
  * Author URI: https://github.com/trendwerk
- * 
- * Version: 1.0.0
+ *
+ * Version: 1.0.1
  */
 
 if( ! is_multisite() )
@@ -34,7 +34,7 @@ class Multisite_Labels {
 				/**
 				 * Allow superadmins to setup an admin label
 				 */
-				
+
 				switch_to_blog( $blog->userblog_id );
 				update_option( 'admin_label', '' );
 				restore_current_blog();
@@ -44,13 +44,13 @@ class Multisite_Labels {
 				/**
 				 * Set the admin label
 				 */
-				
+
 				$blog->blogname = $admin_label;
-				
+
 			}
 		}
 
 		return $blogs;
 	}
 
-} new Multisite_Labels;	
+} new Multisite_Labels;

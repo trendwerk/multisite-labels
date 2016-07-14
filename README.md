@@ -6,12 +6,12 @@ Assign labels to WP Multisite websites. Useful for keeping them apart in multili
 ### Installation
 If you're using Composer to manage WordPress, add this plugin to your project's dependencies. Run:
 ```sh
-composer require trendwerk/multisite-labels 1.0.0
+composer require trendwerk/multisite-labels 1.0.1
 ```
 
 Or manually add it to your `composer.json`:
 ```json
 "require": {
-	"trendwerk/multisite-labels": "1.0.0"
+	"trendwerk/multisite-labels": "1.0.1"
 },
 ```
